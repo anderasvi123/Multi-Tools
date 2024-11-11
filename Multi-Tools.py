@@ -14,7 +14,7 @@ body_nuke = {
       "url": "https://discord.gg/AQVeCT5m",
       "color": 16711680,
       "image": {
-        "url": "https://i.postimg.cc/qqy9KhXj/Design-sem-nome-1.png"
+        "url": "https://i.postimg.cc/Kz438R05/Our-Bot.png"
       },
       "fields": [],
       "footer": {
@@ -28,7 +28,7 @@ body_nuke = {
   "username": "Multi Tools",
   "avatar_url": "https://i.postimg.cc/L4vJ6mGZ/Feliz-anivers-rio.png"
 }
-b0 = "                                     By Multi Tools Server                                V1.2          "
+b0 = "                                     By Multi Tools Server                                V1.3          "
 b1 = "          ███╗   ███╗██╗   ██╗██╗  ████████╗██╗    ████████╗ ██████╗  ██████╗ ██╗     ███████╗          "
 b2 = "          ████╗ ████║██║   ██║██║  ╚══██╔══╝██║    ╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██╔════╝          "
 b3 = "          ██╔████╔██║██║   ██║██║     ██║   ██║       ██║   ██║   ██║██║   ██║██║     ███████╗          "
@@ -38,9 +38,9 @@ b6 = "          ║═╝     ╚═╝ ╚═════╝ ╚═══║═
 b7 = "          ║                       ║                          ║                                          "
 b8 = "          ║═════(1) Send Text     ║═════(4) Change Name      ║═════(7) Change Avatar                    "
 b9 = "          ║                       ║                          ║                                          "
-b10="          ║═════(2) Spam Chat     ║═════(5) Nuke Channel     ╚═════(8) Exit                              "
-b11="          ║                       ║                                                                      "
-b12="          ║═════(3) Url Webhook   ╚═════(6) Info                                                         "
+b10="          ║═════(2) Spam Chat     ║═════(5) Nuke Channel     ║═════(8) Ping People                       "
+b11="          ║                       ║                          ║                                           "
+b12="          ║═════(3) Url Webhook   ╚═════(6) Info             ╚═════(9) Exit                              "
 b13="          ║                                                                                              "
 b14="          ╚═════════════════>                                                                            "
 
@@ -110,7 +110,7 @@ while True:
         countdown = input(f"{Fore.YELLOW}          ╚Countdown════════>")
         for i in range(int(spam)):
             requests.post(url, json=body_nuke)
-            print(f"{Fore.LIGHTYELLOW_EX}-Send- {i+1}")
+            print(f"{Fore.LIGHTGREEN_EX}-Send- {i+1}")
         print(f"{Fore.LIGHTGREEN_EX}-Done-")
         restart()
         banner()
@@ -124,5 +124,20 @@ while True:
         restart()
         banner()
     if main_input == "8":
+        count = input(f"{Fore.YELLOW}          ║Count════════════>")
+        your_name = input(f"{Fore.YELLOW}          ║Your Name════════>")
+        people = input(f"{Fore.YELLOW}          ║People ID════════>")
+        for i in range(int(count)):
+            requests.post(url, json=
+            {
+                "avatar_url": avatar_url,
+                "username": name,
+                "content": f"Hey <@{people}> Wake up. {your_name} wanna talk you"
+            })
+            print(f"{Fore.LIGHTGREEN_EX}-Send- {i+1}")
+        print(f"{Fore.LIGHTGREEN_EX}-Done-")
+        restart()
+        banner()
+    if main_input == "9":
         quit()
 banner()
